@@ -8,11 +8,11 @@ import pandas as pd
 import torch.nn as nn
 
 # Define the path to the directory containing audio files for transcription
-transcription_input_folder = "./sample"
+transcription_input_folder = "./audio"
 transcription_output_folder = "./transcriptions"
 
 # Define the path to the directory containing audio files for training the BERT model
-training_folder = "./sample"
+training_folder = "./audio"
 
 # Define the number of output classes based on your classification task
 num_classes = 5
