@@ -5,7 +5,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 import speech_recognition as sr
 
 # Load the fine-tuned BERT model
-model_path = "./fine_tuned_bert_modelWithAccuracy"
+model_path = "./fine_tuned_bert_modelCeb-Eng"
 model = BertForSequenceClassification.from_pretrained(model_path)
 # Load the fine-tuned BERT tokenizer
 tokenizer = BertTokenizer.from_pretrained(model_path)
