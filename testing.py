@@ -1,4 +1,3 @@
-
 import torch
 import os
 import torchaudio
@@ -12,7 +11,7 @@ model = BertForSequenceClassification.from_pretrained(model_path)
 tokenizer = BertTokenizer.from_pretrained(model_path)
 
 # Define the path to the folder containing audio files
-folder_path = "./sample"
+folder_path = "./audio"
 
 # Function to transcribe audio file using SpeechRecognition library
 def transcribe_audio(audio_file):
@@ -40,6 +39,7 @@ for filename in os.listdir(folder_path):
         
         # Transcribe the audio file
         transcription = transcribe_audio(audio_file)
+        print("Transcription result:", transcription)  # Debugging statement
         if transcription:
             # Tokenize the transcribed text using the fine-tuned tokenizer
             inputs = tokenizer(transcription, padding=True, truncation=True, return_tensors="pt")
