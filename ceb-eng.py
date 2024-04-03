@@ -8,11 +8,11 @@ import pandas as pd
 import torch.nn as nn
 
 # Define the path to the directory containing audio files for transcription
-transcription_input_folder = "./audio"
+transcription_input_folder = "./1-100"
 transcription_output_folder = "./transcriptions"
 
 # Define the path to the directory containing audio files for training the BERT model
-training_folder = "./audio"
+training_folder = "./1-100"
 
 # Define the number of output classes based on your classification task
 num_classes = 5
@@ -92,7 +92,7 @@ class MyDataset(Dataset):
 print("Number of classes:", num_classes)
 
 # Load labels from Excel file for BERT model training
-excel_file = "./sample.xlsx"
+excel_file = "./train.xlsx"
 df = pd.read_excel(excel_file)
 labels = df['Phrase'].tolist()
 
@@ -153,5 +153,5 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch+1}, Loss: {epoch_loss}, Accuracy: {epoch_accuracy}")
 
 # Save the fine-tuned BERT model
-model.save_pretrained("fine_tuned_bert_modelCeb-Eng")
+model.save_pretrained("fine_tuned_bert_modelCeb-Eng2")
 print("Model Saved.")
