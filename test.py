@@ -56,7 +56,7 @@ def transcribe_and_translate_folder(folder_path):
     return translations
 
 # Example usage
-folder_path = "./audio"
+folder_path = "./train"
 translations = transcribe_and_translate_folder(folder_path)
 for audio_file, translation in translations.items():
     print(f"Audio File: {audio_file}, Translation: {translation}")
